@@ -15,7 +15,7 @@ namespace Programmers
 
         public static string Solution(int a, int b)
         {
-            int days = 0;
+            int days = 0; //could init as b-1
             for (int i = 0; i < a - 1; i++)
             {
                 days += dateArray[i];
@@ -26,6 +26,16 @@ namespace Programmers
             var fromFri = days % 7;
             string answer = dayArray[fromFri];
 
+            return answer;
+        }
+
+        public static string Solution2(int a, int b)
+        {
+            string answer = "";
+            DateTime date = new DateTime(2016, a, b);
+            answer = date.DayOfWeek.ToString().Substring(0, 3).ToUpper();
+            //answer = date.ToString("ddd").ToUpper();
+            
             return answer;
         }
     }
